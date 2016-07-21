@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+     - name: Install Package
+       apt: name=nginx update_cache=true state=latest
+     - name: ensure nginx is running (and enable it at boot)
+       service: name=nginx state=started enabled=yes
