@@ -1,0 +1,11 @@
+web:
+    image: wordpress
+    links:
+     - mysql
+    environment:
+     - WORDPRESS_DB_PASSWORD=sample
+mysql:
+    image: mysql:latest
+    environment:
+        - MYSQL_ROOT_PASSWORD=sample
+        - MYSQL_DATABASE=wordpress
